@@ -1,0 +1,45 @@
+package com.ecommers;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class CustomerService {
+	
+	Scanner sc;
+	static int custid;
+	
+	public void addCustomerDetails(Customer cr,Statement st)
+	{
+		String query="";
+		cr.setCustomerID(custid++);
+		System.out.println("Enter the customer Name");
+		sc.nextInt();
+		cr.setName(sc.nextLine());
+		System.out.println("Enter the phone number");
+		cr.setPhn(sc.nextInt());
+		query="insert into customer value("+cr.getCustomerID()+","+cr.getName()+","+cr.getPhn()+"\"";
+		try {
+			int rs=st.executeUpdate(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void editcustomerdetails(Customer cr,Statement st)	
+	{
+		System.out.println("Enter the customer if you want to modify");
+		String query="UPDATE CUSTOMER SET customerId"+cr.getCustomerID()+""
+		cr.setCustomerID(sc.nextInt());
+		System.out.println("Enter the customer Name");
+		sc.nextInt();
+		cr.setName(sc.nextLine());
+		System.out.println("Enter the phone number");
+		cr.setPhn(sc.nextInt());
+		
+	}
+	{
+		 sc=new Scanner(System.in);
+	}
+}

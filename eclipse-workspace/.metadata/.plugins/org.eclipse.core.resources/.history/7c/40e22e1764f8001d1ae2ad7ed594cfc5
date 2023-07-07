@@ -1,0 +1,10 @@
+package com.telusko.samsung;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public interface MobileProcessor {
+	
+	void process();
+
+}

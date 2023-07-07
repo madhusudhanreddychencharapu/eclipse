@@ -1,0 +1,33 @@
+package com.telusko.samsung;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
+public class Snapdragon implements MobileProcessor{
+	
+	public static int count=95;
+	
+	@Autowired
+	public static Samsung samsung;
+	
+	private final String runtimeValue;
+
+    @Autowired
+    public Snapdragon(@Value("${my.property}") String runtimeValue) {
+        this.runtimeValue = runtimeValue;
+    }
+    
+	
+
+	public void process() {
+		System.out.println("The value of count :"+ count++);
+		System.out.println("World best Cpu");
+		System.out.println("I am created through the constructor injection:"+this.runtimeValue);
+		
+	}
+
+}

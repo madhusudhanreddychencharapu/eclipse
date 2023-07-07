@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- we can even separate xml files for each package if needed -->
+	<bean id ="myfortuneservice"
+			class="Basics.HappyFortuneSevice">
+	</bean>
+	
+	<bean id ="myCricketCoach"
+			class="Basics.CricketCoach">
+				<property name="fortuneService" ref="myfortuneservice"/>
+				<property name="email" value="madhusudhanreddychencharapu@gmail.com" />
+				<property name="team" value="Delhi capitals"/>
+	</bean>
+</beans>

@@ -1,0 +1,7 @@
+package com.telusko.samsung;
+
+public interface MobileProcessor {
+	
+	void process();
+
+}
