@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=localhost_wfdb;schema=ws
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: ws
+    password: ws
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+#        temp.use_jdbc_metadata_defaults: false
+    
+     
